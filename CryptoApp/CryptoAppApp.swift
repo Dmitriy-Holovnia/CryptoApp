@@ -32,6 +32,7 @@ struct CryptoAppApp: App {
                     }
                     .tag(1)
             }
+            .background(Color("main-gray"))
 
         }.onChange(of: scenePhase) { phase in
             switch phase {
