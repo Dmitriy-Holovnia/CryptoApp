@@ -76,7 +76,9 @@ struct ChartsView: View {
                 Spacer()
                     .frame(maxWidth: .infinity)
                 Button("Present Full-Screen Cover") {
-                    sheetIsPresented.toggle()
+                    withAnimation(.easeInOut(duration: 2.0)) {
+                        sheetIsPresented.toggle()
+                    }
                 }
                 Spacer()
                     .frame(maxWidth: .infinity)
@@ -96,7 +98,11 @@ struct ChartsView: View {
                               buyAction: buy)
         }
         .background(Color("main-gray"))
-        .overlay(Circle().offset(y: sheetIsPresented ? 0 : 700))
+        .overlay(
+            TradingPanelView(isAppear: $sheetIsPresented)
+                .offset(y: sheetIsPresented ? 0 : 700)
+
+        )
         .animation(.easeInOut(duration: 0.1))
 
     }
