@@ -39,36 +39,36 @@ struct ChartsView: View {
                 .padding([.top, .horizontal], 10)
 
                 // Coin selector
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(spacing: 5) {
-                        Image("plus")
-                            .padding()
-                        ForEach(0..<coins.count) { index in
-                            if selectedCoin == coins[index] {
-                                CoinMenuView(coin: coins[index])
-                                    .padding(.top, 2)
-                            } else {
-                                if index == 0 {
-                                    Divider()
-                                        .background(Color("light-gray"))
-                                        .padding(.vertical, 10)
-                                }
-                                Image(coins[index].image)
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 35)
-                                    .padding()
-                                    .onTapGesture {
-                                        selectedCoin = coins[index]
-                                    }
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 5) {
+                    Image("plus")
+                        .padding()
+                    ForEach(0..<coins.count) { index in
+                        if selectedCoin == coins[index] {
+                            CoinMenuView(coin: coins[index])
+                                .padding(.top, 2)
+                        } else {
+                            if index == 0 {
                                 Divider()
                                     .background(Color("light-gray"))
                                     .padding(.vertical, 10)
-
                             }
+                            Image(coins[index].image)
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 35)
+                                .padding()
+                                .onTapGesture {
+                                    selectedCoin = coins[index]
+                                }
+                            Divider()
+                                .background(Color("light-gray"))
+                                .padding(.vertical, 10)
+
                         }
                     }
                 }
+            }
                 .frame(height: 46)
                 .background(Color("main-gray"))
 
@@ -99,22 +99,19 @@ struct ChartsView: View {
                                   buyAction: buy)
             }
             .background(Color("main-gray"))
+            
             if sheetIsPresented {
-                VStack {
-                    Spacer()
-                }
-                .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
-                .background(Color.black)
-                .edgesIgnoringSafeArea(.all)
-                .opacity(0.5)
-                .onTapGesture {
-                    self.sheetIsPresented = false
-                }
+                BlankView()
+                    .opacity(0.5)
+                    .onTapGesture {
+                        self.sheetIsPresented = false
+                    }
                 
                 TradingPanelView(isPressented: $sheetIsPresented)
                     .transition(.move(edge: .bottom))
             }
         }
+        .edgesIgnoringSafeArea(.all)
     }
     
     func invest() {
@@ -137,5 +134,18 @@ struct ChartsView: View {
 struct ChartsView_Previews: PreviewProvider {
     static var previews: some View {
         ChartsView()
+    }
+}
+
+
+struct BlankView: View {
+    
+    var body: some View {
+        VStack {
+            Spacer()
+        }
+        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity)
+        .background(Color.black)
+        .edgesIgnoringSafeArea(.all)
     }
 }
