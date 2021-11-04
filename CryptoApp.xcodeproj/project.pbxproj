@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		094F67222722BAF1009087A2 /* TradingPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094F67212722BAF1009087A2 /* TradingPanelView.swift */; };
-		094F67242722E613009087A2 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094F67232722E613009087A2 /* TestView.swift */; };
 		0966C7E92718ACD8004847DF /* CryptoAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0966C7E82718ACD8004847DF /* CryptoAppApp.swift */; };
 		0966C7EB2718ACD8004847DF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0966C7EA2718ACD8004847DF /* ContentView.swift */; };
 		0966C7ED2718ACDB004847DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0966C7EC2718ACDB004847DF /* Assets.xcassets */; };
@@ -22,7 +21,6 @@
 
 /* Begin PBXFileReference section */
 		094F67212722BAF1009087A2 /* TradingPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradingPanelView.swift; sourceTree = "<group>"; };
-		094F67232722E613009087A2 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		0966C7E52718ACD8004847DF /* CryptoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CryptoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0966C7E82718ACD8004847DF /* CryptoAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoAppApp.swift; sourceTree = "<group>"; };
 		0966C7EA2718ACD8004847DF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -62,7 +60,6 @@
 				F2313C912721772300D9BF30 /* TradingContolView.swift */,
 				F2313C8F2721517600D9BF30 /* CoinMenuView.swift */,
 				094F67212722BAF1009087A2 /* TradingPanelView.swift */,
-				094F67232722E613009087A2 /* TestView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -180,7 +177,6 @@
 				F2313C922721772300D9BF30 /* TradingContolView.swift in Sources */,
 				F2313C8E2720A86500D9BF30 /* Coin.swift in Sources */,
 				094F67222722BAF1009087A2 /* TradingPanelView.swift in Sources */,
-				094F67242722E613009087A2 /* TestView.swift in Sources */,
 				F2313C902721517700D9BF30 /* CoinMenuView.swift in Sources */,
 				0966C7E92718ACD8004847DF /* CryptoAppApp.swift in Sources */,
 			);

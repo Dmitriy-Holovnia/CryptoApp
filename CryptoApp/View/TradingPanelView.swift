@@ -9,21 +9,33 @@ import SwiftUI
 
 struct TradingPanelView: View {
 
-    @Binding var isAppear: Bool
+    @Binding var isPressented: Bool
 
     var body: some View {
-        RoundedRectangle(cornerRadius: 10)
-            .foregroundColor(Color.red)
-            .frame(height: 400)
-            .onTapGesture {
-                isAppear = false
+        GeometryReader { geometry in
+            VStack {
+                Spacer()
+
+                Text("Some title")
+                    .font(.headline)
+                    .foregroundColor(.primary)
+
+                ScrollView(.vertical) {
+                    Text("Header")
+                    ForEach(0..<20) { index in
+                        Text("Index \(index)")
+                    }
+                }
             }
+            .offset(y: geometry.size.height / 2)
+            .edgesIgnoringSafeArea(.all)
+        }
+        .background(Color.white)
     }
 }
 
 struct TradingPanelView_Previews: PreviewProvider {
-    @State static var isAppear = true
     static var previews: some View {
-        TradingPanelView(isAppear: $isAppear)
+        TradingPanelView(isPressented: .constant(true))
     }
 }
